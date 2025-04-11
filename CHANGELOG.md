@@ -1,3 +1,9 @@
+## v0.1.1 (2025-04-11)
+
+### Fix
+
+- update PyPI publish workflow to use Linux runner
+
 ## v0.1.0 (2025-04-11)
 
 ### Feat

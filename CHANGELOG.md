@@ -1,3 +1,9 @@
+## v0.1.4 (2025-05-07)
+
+### Fix
+
+- **deps**: update dependency photoshop-python-api to v0.24.1
+
 ## v0.1.3 (2025-05-02)
 
 ### Fix

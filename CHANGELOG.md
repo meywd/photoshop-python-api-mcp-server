@@ -1,3 +1,9 @@
+## v0.1.6 (2025-05-26)
+
+### Fix
+
+- **deps**: update dependency mcp to v1.9.1
+
 ## v0.1.5 (2025-05-07)
 
 ### Fix

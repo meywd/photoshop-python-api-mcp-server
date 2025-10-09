@@ -103,6 +103,8 @@ The server provides various tools for controlling Photoshop:
 - **Document Tools**: Create, open, and save documents
 - **Layer Tools**: Create text layers, solid color layers, etc.
 - **Session Tools**: Get information about Photoshop session, active document, selection
+- **Image Conversion Tools**: Resize, crop, rotate, flip, change color modes, and export to multiple formats
+- **Format Conversion Tools**: Convert between popular formats (JPG, PNG, WebP, GIF, TIFF, PSD) with smart presets for web, print, and social media
 
 ## Example Prompts for AI Assistants
 
@@ -149,6 +151,127 @@ AI Assistant: I'll create that social media post for you.
 4. Position and style the text appropriately]
 
 I've created your social media post with a gradient background and bold "Summer Sale" text.
+```
+
+### Image Conversion Examples
+
+```text
+User: Resize the current image to 1920x1080 pixels for a YouTube thumbnail.
+
+AI Assistant: I'll resize the image for you.
+
+[The AI uses the `resize_image` tool with width=1920, height=1080]
+
+I've resized your image to 1920x1080 pixels, perfect for a YouTube thumbnail.
+```
+
+```text
+User: Convert this image to grayscale and export it as both JPG and PNG.
+
+AI Assistant: I'll convert to grayscale and export to both formats.
+
+[The AI uses the Photoshop MCP server to:
+1. Use `change_color_mode` tool to convert to grayscale
+2. Use `batch_export` tool to export as both JPG and PNG formats]
+
+Your image has been converted to grayscale and exported as both JPG and PNG.
+```
+
+```text
+User: Crop this image to remove the white borders and rotate it 90 degrees clockwise.
+
+AI Assistant: I'll crop and rotate the image for you.
+
+[The AI uses the Photoshop MCP server to:
+1. Use `auto_trim` tool with "top_left_color" to remove white borders
+2. Use `rotate_image` tool with angle=90 to rotate clockwise]
+
+I've removed the white borders and rotated your image 90 degrees clockwise.
+```
+
+```text
+User: Flatten all layers and export this for print in CMYK as a TIFF file.
+
+AI Assistant: I'll prepare the image for print.
+
+[The AI uses the Photoshop MCP server to:
+1. Use `flatten_document` tool to merge all layers
+2. Use `change_color_mode` tool to convert to CMYK
+3. Use `export_image` tool with format="tiff" for print-ready output]
+
+Your image has been flattened, converted to CMYK, and exported as a TIFF file ready for print.
+```
+
+### Format Conversion Examples
+
+```text
+User: Convert this image to JPG with high quality.
+
+AI Assistant: I'll convert your image to JPG format with high quality.
+
+[The AI uses the `convert_to_jpg` tool with quality=10, optimize=true]
+
+I've converted your image to JPG with maximum quality. The file is 2.3 MB.
+```
+
+```text
+User: Save this as a PNG for the web with transparency preserved.
+
+AI Assistant: I'll save your image as an optimized PNG for web use.
+
+[The AI uses the `convert_to_png` tool with compression=6]
+
+I've saved your image as PNG with transparency preserved. The file is optimized for web use at 850 KB.
+```
+
+```text
+User: Optimize this image for Instagram square post.
+
+AI Assistant: I'll optimize your image for an Instagram square post.
+
+[The AI uses the `convert_for_social_media` tool with platform="instagram", post_type="square"]
+
+I've optimized your image for Instagram. It's now 1080x1080 pixels and saved as a high-quality JPG at 425 KB.
+```
+
+```text
+User: Export this image for web in multiple formats - JPG, PNG, and WebP.
+
+AI Assistant: I'll export your image in all three web formats.
+
+[The AI uses the `convert_for_web` tool three times, once for each format]
+
+I've exported your image optimized for web use:
+- JPG: 1.2 MB (max quality, 2048px)
+- PNG: 3.5 MB (compressed, 2048px)
+- WebP: 890 KB (80% quality, 2048px)
+
+All files are resized to fit within 2048px and converted to RGB color mode.
+```
+
+```text
+User: Convert this to TIFF with LZW compression for archival.
+
+AI Assistant: I'll convert your image to TIFF with LZW compression.
+
+[The AI uses the `convert_to_tiff` tool with compression="lzw"]
+
+I've saved your image as TIFF with LZW compression. The file is 15.8 MB with color profile embedded, perfect for archival storage.
+```
+
+```text
+User: Prepare this image for professional printing in CMYK.
+
+AI Assistant: I'll prepare your image for professional printing.
+
+[The AI uses the `convert_for_print` tool with color_mode="cmyk", resolution=300]
+
+Your image is ready for print:
+- Color mode: CMYK
+- Resolution: 300 DPI
+- Format: TIFF with LZW compression
+- Color profile: Embedded
+- File size: 24.5 MB
 ```
 
 ## License

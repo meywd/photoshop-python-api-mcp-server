@@ -1,3 +1,10 @@
+## v0.1.10 (2025-10-17)
+
+### Fix
+
+- correct mock paths in FastMCP initialization tests
+- remove unsupported description and version parameters from FastMCP initialization
+
 ## v0.1.9 (2025-06-30)
 
 ### Fix

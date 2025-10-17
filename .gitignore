@@ -21,3 +21,7 @@ target/*
 /coverage.xml
 /.zip/
 __pycache__/
+
+# Claude Code configuration
+.claude/
+CLAUDE.md
